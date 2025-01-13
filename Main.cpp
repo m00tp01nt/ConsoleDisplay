@@ -248,9 +248,13 @@ int main(void) {
 
 	std::vector<Body*> list = std::vector<Body*>();
 
-	Body object = Body(Point(10, 5), Velocity(0, -15, 0));
+	Body object = Body(Point(40, 35), Velocity(0, 0, 0));
 	object.mass = 100000000000000;
-	object.p.color = 'x';
+	object.p.color = 'w';
+
+	Body object2 = Body(Point(40, 15), Velocity(0, 0, 0));
+	object2.mass = 100000000000000;
+	object2.p.color = 'x';
 
 	Body planet = Body(Point(50, 25), Velocity(0, -15));
 	planet.mass = 100000000000000;
@@ -260,7 +264,8 @@ int main(void) {
 	planet2.mass = 100000000000000;
 	planet2.p.color = 'z';
 
-	//list.push_back(&object);
+	list.push_back(&object);
+	list.push_back(&object2);
 	list.push_back(&planet);
 	list.push_back(&planet2);
 
@@ -294,7 +299,7 @@ int main(void) {
 
 		print(output);
 
-		std::cout << planet.v.length() - planet2.v.length() << std::endl;
+		std::cout << " w velocity - " << object.v.length() << std::endl;
 
 		usleep(16667);
 	}
